@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    container_name: bob-pg
+    image: "postgres:13.5-alpine"
+    environment:
+      - POSTGRES_PASSWORD=example
+    ports:
+      - "6543:5432"
+    command: ["postgres", "-c", "log_statement=all"]

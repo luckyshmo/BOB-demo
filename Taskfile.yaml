@@ -1,0 +1,15 @@
+version: "3"
+
+tasks:
+  migrate:
+    desc: migrate DB to latest migration
+    cmds:
+      - go run migrations/main.go
+  drop:
+    desc: drop DB
+    cmds:
+      - go run migrations/main.go -drop
+  db:
+    desc: db up
+    cmds:
+      - docker compose up postgres
